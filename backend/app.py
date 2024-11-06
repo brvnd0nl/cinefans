@@ -1,7 +1,9 @@
 # backend/app.py
 from flask import Flask, jsonify
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)  # Esto permite todas las solicitudes de cualquier origen
 
 @app.route('/movies', methods=['GET'])
 def get_movies():
