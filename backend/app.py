@@ -14,6 +14,11 @@ def get_movies():
         {"id": 3, "title": "Interstellar", "year": 2014},
         {"id": 4, "title": "Parasite", "year": 2019},
         {"id": 5, "title": "The Godfather", "year": 1972},
+        {"id": 6, "title": "The Dark Knight", "year": 2008},
+        {"id": 7, "title": "Forrest Gump", "year": 1994},
+        {"id": 8, "title": "The Shawshank Redemption", "year": 1994},
+        {"id": 9, "title": "Pulp Fiction", "year": 1994},
+        {"id": 10, "title": "Fight Club", "year": 1999},
     ]
     return jsonify(movies)
 
