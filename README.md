@@ -13,8 +13,8 @@
 **Tecnologías utilizadas:**
 
 * **Frontend:** React
-* **Backend:** Python, Django
-* **Base de datos:** MySQL
+* **Backend:** Python, Flask
+* **Base de datos:** PostgreSQL
 
 **Cómo contribuir:**
 
