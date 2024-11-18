@@ -9,29 +9,29 @@ pipeline {
         stage('Construcción Frontend') {
             steps {
                 dir('frontend') {
-                    bat 'npm install'
-                    bat 'npm run build'
+                    sh 'npm install'
+                    sh 'npm run build'
                 }
             }
         }
         stage('Construcción Backend') {
             steps {
                 dir('backend') {
-                    bat 'python -m venv venv'
-                    bat 'venv\\Scripts\\pip install -r requirements.txt'
+                    sh 'python3 -m venv venv'
+                    sh './venv/bin/pip install -r requirements.txt'
                 }
             }
         }
         stage('Pruebas') {
             steps {
                 dir('backend') {
-                    bat 'venv\\Scripts\\python -m unittest discover'
+                    sh './venv/bin/python -m unittest discover'
                 }
             }
         }
         stage('Despliegue') {
             steps {
-                bat 'docker-compose up -d --build'
+                sh 'docker-compose up -d --build'
             }
         }
     }
