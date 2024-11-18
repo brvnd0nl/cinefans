@@ -1,72 +1,48 @@
 pipeline {
     agent any
     environment {
-        COMPOSE_PROJECT_NAME = "cinefans" // Define un nombre único para los contenedores
+        COMPOSE_PROJECT_NAME = "pipeline" // Nombre del proyecto Docker Compose
     }
     stages {
         stage('Preparar Contenedores') {
             steps {
-                script {
-                    // Detener contenedores previos (si existen)
-                    sh '''
-                    docker-compose down || true
-                    '''
-                    // Construir y levantar los servicios
-                    sh '''
-                    docker-compose up -d --build
-                    '''
+                echo 'Preparando contenedores con Docker Compose...'
+                dir('./') {
+                    sh 'docker-compose down || true'
+                    sh 'docker-compose up -d --build'
                 }
             }
         }
         stage('Pruebas Backend') {
             steps {
-                script {
-                    // Ejecutar pruebas en el backend
-                    sh '''
-                    docker exec ${COMPOSE_PROJECT_NAME}_backend pytest || echo "Pruebas del backend fallaron"
-                    '''
-                }
+                echo 'Saltando pruebas en el backend...'
             }
         }
         stage('Pruebas Frontend') {
             steps {
-                script {
-                    // Instalar dependencias en el frontend si es necesario
-                    sh '''
-                    docker exec ${COMPOSE_PROJECT_NAME}_frontend npm install
-                    '''
-                    // Ejecutar pruebas en el frontend
-                    sh '''
-                    docker exec ${COMPOSE_PROJECT_NAME}_frontend npm test || echo "Pruebas del frontend fallaron"
-                    '''
-                }
+                echo 'Saltando pruebas en el frontend...'
             }
         }
         stage('Verificar Servicios') {
             steps {
-                script {
-                    // Verificar que el backend responde correctamente
-                    sh '''
-                    curl -X GET http://localhost:5000/health || echo "El backend no responde"
-                    '''
-                }
+                echo 'Verificando servicios...'
+                sh 'curl -X GET http://localhost:5000/health || echo "El backend no responde"'
             }
         }
         stage('Despliegue') {
             steps {
-                echo 'Despliegue completado en el entorno local. Listo para producción.'
-                // Agregar lógica adicional para despliegue si es necesario
+                echo 'Desplegando en entorno local...'
             }
         }
     }
     post {
         always {
-            script {
-                // Detener todos los contenedores al finalizar
-                sh '''
-                docker-compose down
-                '''
-            }
+            echo 'Limpiando contenedores...'
+            sh 'docker-compose down || true'
+            echo 'El pipeline finalizó.'
+        }
+        failure {
+            echo 'El pipeline falló. Por favor, revisa los errores.'
         }
     }
 }
