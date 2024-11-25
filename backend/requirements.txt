@@ -1,2 +1,11 @@
-flask
-flask-cors
+flask==3.0.0
+flask-sqlalchemy==3.1.1
+flask-migrate==4.0.5
+psycopg2-binary==2.9.9
+flask-jwt-extended==4.6.0
+flask-cors==4.0.0
+python-dotenv==1.0.0
+requests==2.31.0
+bcrypt==4.1.2
+marshmallow==3.20.1
+python-jose==3.3.0
