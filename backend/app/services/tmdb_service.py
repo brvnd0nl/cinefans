@@ -8,6 +8,7 @@ load_dotenv()
 TMDB_API_KEY = os.getenv('TMDB_API_KEY')
 BASE_URL = "https://api.themoviedb.org/3"
 IMAGE_BASE_URL = "https://image.tmdb.org/t/p"
+LANGUAGE = "es-CO"
 IMAGE_SIZES = {
     "small": "w500",
     "medium": "w780",
@@ -41,7 +42,7 @@ def search_movies(query):
     url = f"{BASE_URL}/search/movie"
     params = {
         "api_key": TMDB_API_KEY,
-        "language": "es-MX",
+        "language": LANGUAGE,
         "query": query
     }
     
@@ -61,7 +62,7 @@ def get_top_rated_movies(page=1):
     url = f"{BASE_URL}/movie/top_rated"
     params = {
         "api_key": TMDB_API_KEY,
-        "language": "es-MX",
+        "language": LANGUAGE,
         "page": page
     }
     
@@ -81,7 +82,7 @@ def get_popular_movies(page=1):
     url = f"{BASE_URL}/movie/popular"
     params = {
         "api_key": TMDB_API_KEY,
-        "language": "es-MX",
+        "language": LANGUAGE,
         "page": page
     }
     
