@@ -1,39 +1,41 @@
-import { useState, useEffect } from 'react'
-import Header from './components/Header'
-import './styles/App.css'
+import { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Importar react-router-dom
+import './App.css';
+import Navbar from './Navbar';
+import Slider from './Slider';
+import SliderPopulares from './SliderPopulares';
+import SliderAccion from './SliderAccion';
+import SliderAventura from './SliderAventura';
+import SliderComedia from './SliderComedia';
+import Footer from './Footer';
+import Login from './login';
+import Registro from './Registro';
+import IndexMovie from './IndexMovie';
 
 function App() {
-  const [movies, setMovies] = useState([]);
-
-  const BASE_URL = 'http://localhost:5000/movies'
-
-  useEffect(() => {
-    fetch(BASE_URL)
-      .then(response => response.json())
-      .then(data => setMovies(data))
-      .catch(error => console.error('Error fetching movies:', error))
-  }, [])
+  const [count, setCount] = useState(0);
 
   return (
-    <>
-      <Header />
-      <div className='p-8'>
-        <h1 className='text-3xl font-bold'>Bienvenido a <span className='italic'>CINEFAN</span></h1>
+    <Router> {/* Envolver todo en un Router */}
+      <div className="App">
+        <Navbar />
+        <Routes>
+          {/* Definir la ruta de la página principal */}
+          <Route path="/" element={
+            <>
+              <IndexMovie />
+              
+            </>
+          } />
+          {/* Definir la ruta de la página de Login */}
+          <Route path="/login" element={<Login />} /> {/* Ruta para la página Login */}
+          <Route path="/registro" element={<Registro />} /> {/* Ruta para la página Login */}
+          <Route path="/index-movie" element={<IndexMovie />} />
+        </Routes>
+        <Footer />
       </div>
-      <p>A continuación te mostraremos el top 10 de peliculas mas vistas en la actualidad.</p>
-
-      <div className='grid grid-cols-1 gap-4 p-8'>
-      <ul>
-        {movies.map(movie => (
-          <li key={movie.id}>
-            {movie.title} ({movie.year})
-          </li>
-        ))}
-      </ul>
-      </div>
-
-    </>
-  )
+    </Router>
+  );
 }
 
-export default App
+export default App;
