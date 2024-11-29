@@ -1,0 +1,678 @@
+{
+  "id": "0",
+  "name": "CineFans",
+  "createdAt": "2024-11-27T04:53:26.973Z",
+  "updatedAt": "2024-11-27T04:53:26.973Z",
+  "databaseType": "generic",
+  "tables": [
+    {
+      "id": "1",
+      "name": "favorites",
+      "x": 594,
+      "y": -124.46875,
+      "fields": [
+        {
+          "id": "2",
+          "name": "id",
+          "type": {
+            "name": "uuid",
+            "id": "uuid"
+          },
+          "unique": true,
+          "nullable": false,
+          "primaryKey": true,
+          "createdAt": 1731869953472
+        },
+        {
+          "id": "3",
+          "name": "user_id",
+          "type": {
+            "name": "uuid",
+            "id": "uuid"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1731869970464
+        },
+        {
+          "id": "4",
+          "name": "movie_id",
+          "type": {
+            "name": "uuid",
+            "id": "uuid"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1731869977568
+        }
+      ],
+      "indexes": [
+        {
+          "id": "5",
+          "name": "index_1",
+          "fieldIds": [
+            "2"
+          ],
+          "unique": true,
+          "createdAt": 1731870328320
+        }
+      ],
+      "color": "#ff6b8a",
+      "createdAt": 1731869953472,
+      "isView": false,
+      "diagramId": "5jm1ypbwuuxa"
+    },
+    {
+      "id": "6",
+      "name": "movies",
+      "x": 735.25,
+      "y": 429.75,
+      "fields": [
+        {
+          "id": "7",
+          "name": "id",
+          "type": {
+            "name": "uuid",
+            "id": "uuid"
+          },
+          "unique": true,
+          "nullable": false,
+          "primaryKey": true,
+          "createdAt": 1731869818536
+        },
+        {
+          "id": "8",
+          "name": "title",
+          "type": {
+            "name": "varchar",
+            "id": "varchar"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1731869833636
+        },
+        {
+          "id": "9",
+          "name": "release_year",
+          "type": {
+            "name": "int",
+            "id": "int"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1731869842320
+        },
+        {
+          "id": "10",
+          "name": "duration",
+          "type": {
+            "name": "int",
+            "id": "int"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1731869849097
+        },
+        {
+          "id": "11",
+          "name": "genre",
+          "type": {
+            "name": "varchar",
+            "id": "varchar"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1731869853968
+        },
+        {
+          "id": "12",
+          "name": "director",
+          "type": {
+            "name": "varchar",
+            "id": "varchar"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1731869858368
+        },
+        {
+          "id": "13",
+          "name": "synopsis",
+          "type": {
+            "name": "text",
+            "id": "text"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1731869865640
+        },
+        {
+          "id": "14",
+          "name": "trailer_url",
+          "type": {
+            "name": "varchar",
+            "id": "varchar"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1731869868264
+        },
+        {
+          "id": "15",
+          "name": "rating",
+          "type": {
+            "name": "decimal",
+            "id": "decimal"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1731869873600
+        },
+        {
+          "id": "16",
+          "name": "created_at",
+          "type": {
+            "name": "timestamp",
+            "id": "timestamp"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1731869884569
+        }
+      ],
+      "indexes": [
+        {
+          "id": "17",
+          "name": "index_1",
+          "fieldIds": [
+            "7"
+          ],
+          "unique": true,
+          "createdAt": 1731870323144
+        }
+      ],
+      "color": "#ff6b8a",
+      "createdAt": 1731869818536,
+      "isView": false,
+      "diagramId": "5jm1ypbwuuxa"
+    },
+    {
+      "id": "18",
+      "name": "news",
+      "x": 139,
+      "y": 402.75,
+      "fields": [
+        {
+          "id": "19",
+          "name": "id",
+          "type": {
+            "name": "uuid",
+            "id": "uuid"
+          },
+          "unique": true,
+          "nullable": false,
+          "primaryKey": true,
+          "createdAt": 1731870865576
+        },
+        {
+          "id": "20",
+          "name": "title",
+          "type": {
+            "name": "varchar",
+            "id": "varchar"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1731870890520
+        },
+        {
+          "id": "21",
+          "name": "content",
+          "type": {
+            "name": "text",
+            "id": "text"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1731870904447
+        },
+        {
+          "id": "22",
+          "name": "created_at",
+          "type": {
+            "name": "timestamp",
+            "id": "timestamp"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1731870914183
+        }
+      ],
+      "indexes": [
+        {
+          "id": "23",
+          "name": "index_1",
+          "fieldIds": [
+            "19"
+          ],
+          "unique": true,
+          "createdAt": 1731870874256
+        }
+      ],
+      "color": "#c05dcf",
+      "createdAt": 1731870865576,
+      "isView": false,
+      "diagramId": "5jm1ypbwuuxa"
+    },
+    {
+      "id": "24",
+      "name": "related_movies",
+      "x": 1069,
+      "y": -17.5,
+      "fields": [
+        {
+          "id": "25",
+          "name": "id",
+          "type": {
+            "name": "uuid",
+            "id": "uuid"
+          },
+          "unique": true,
+          "nullable": false,
+          "primaryKey": true,
+          "createdAt": 1731870801776
+        },
+        {
+          "id": "26",
+          "name": "movie_id",
+          "type": {
+            "name": "uuid",
+            "id": "uuid"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1731870830072
+        },
+        {
+          "id": "27",
+          "name": "related_movie_id",
+          "type": {
+            "name": "uuid",
+            "id": "uuid"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1731870841824
+        }
+      ],
+      "indexes": [
+        {
+          "id": "28",
+          "name": "index_1",
+          "fieldIds": [
+            "25"
+          ],
+          "unique": true,
+          "createdAt": 1731870811919
+        }
+      ],
+      "color": "#b067e9",
+      "createdAt": 1731870801776,
+      "isView": false,
+      "diagramId": "5jm1ypbwuuxa"
+    },
+    {
+      "id": "29",
+      "name": "reviews",
+      "x": 1302,
+      "y": 275,
+      "fields": [
+        {
+          "id": "30",
+          "name": "id",
+          "type": {
+            "name": "uuid",
+            "id": "uuid"
+          },
+          "unique": true,
+          "nullable": false,
+          "primaryKey": true,
+          "createdAt": 1731870513504
+        },
+        {
+          "id": "31",
+          "name": "user_id",
+          "type": {
+            "name": "uuid",
+            "id": "uuid"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1731870534960
+        },
+        {
+          "id": "32",
+          "name": "movie_id",
+          "type": {
+            "name": "uuid",
+            "id": "uuid"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1731870543799
+        },
+        {
+          "id": "33",
+          "name": "content",
+          "type": {
+            "name": "text",
+            "id": "text"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1731870562112
+        },
+        {
+          "id": "34",
+          "name": "rating",
+          "type": {
+            "name": "decimal",
+            "id": "decimal"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1731870571583
+        },
+        {
+          "id": "35",
+          "name": "created_at",
+          "type": {
+            "name": "timestamp",
+            "id": "timestamp"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1731870583056
+        }
+      ],
+      "indexes": [
+        {
+          "id": "36",
+          "name": "index_1",
+          "fieldIds": [
+            "30"
+          ],
+          "unique": false,
+          "createdAt": 1731870619897
+        }
+      ],
+      "color": "#ffe374",
+      "createdAt": 1731870513504,
+      "isView": false,
+      "diagramId": "5jm1ypbwuuxa"
+    },
+    {
+      "id": "37",
+      "name": "users",
+      "x": 100,
+      "y": 100,
+      "fields": [
+        {
+          "id": "38",
+          "name": "id",
+          "type": {
+            "name": "uuid",
+            "id": "uuid"
+          },
+          "unique": true,
+          "nullable": false,
+          "primaryKey": true,
+          "createdAt": 1731869332808
+        },
+        {
+          "id": "39",
+          "name": "username",
+          "type": {
+            "name": "varchar",
+            "id": "varchar"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1731869716288
+        },
+        {
+          "id": "40",
+          "name": "email",
+          "type": {
+            "name": "varchar",
+            "id": "varchar"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1731869744784
+        },
+        {
+          "id": "41",
+          "name": "password_hash",
+          "type": {
+            "name": "varchar",
+            "id": "varchar"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1731869757032
+        },
+        {
+          "id": "42",
+          "name": "created_at",
+          "type": {
+            "name": "timestamp",
+            "id": "timestamp"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1731869768064
+        }
+      ],
+      "indexes": [
+        {
+          "id": "43",
+          "name": "index_1",
+          "fieldIds": [
+            "38"
+          ],
+          "unique": true,
+          "createdAt": 1731870314169
+        }
+      ],
+      "color": "#8a61f5",
+      "createdAt": 1731869332809,
+      "isView": false,
+      "width": 337,
+      "diagramId": "5jm1ypbwuuxa"
+    },
+    {
+      "id": "44",
+      "name": "watchlist",
+      "x": 1300,
+      "y": 100,
+      "fields": [
+        {
+          "id": "45",
+          "name": "id",
+          "type": {
+            "name": "uuid",
+            "id": "uuid"
+          },
+          "unique": true,
+          "nullable": false,
+          "primaryKey": true,
+          "createdAt": 1731870378664
+        },
+        {
+          "id": "46",
+          "name": "user_id",
+          "type": {
+            "name": "uuid",
+            "id": "uuid"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1731870394376
+        },
+        {
+          "id": "47",
+          "name": "movie_id",
+          "type": {
+            "name": "uuid",
+            "id": "uuid"
+          },
+          "unique": false,
+          "nullable": true,
+          "primaryKey": false,
+          "createdAt": 1731870404152
+        }
+      ],
+      "indexes": [
+        {
+          "id": "48",
+          "name": "index_1",
+          "fieldIds": [
+            "45"
+          ],
+          "unique": true,
+          "createdAt": 1731870417280
+        }
+      ],
+      "color": "#ff9f74",
+      "createdAt": 1731870378664,
+      "isView": false,
+      "diagramId": "5jm1ypbwuuxa"
+    }
+  ],
+  "relationships": [
+    {
+      "id": "49",
+      "name": "movies_id_fk",
+      "sourceTableId": "6",
+      "targetTableId": "44",
+      "sourceFieldId": "7",
+      "targetFieldId": "47",
+      "sourceCardinality": "one",
+      "targetCardinality": "many",
+      "createdAt": 1731871119352,
+      "diagramId": "5jm1ypbwuuxa"
+    },
+    {
+      "id": "50",
+      "name": "movies_id_fk",
+      "sourceTableId": "6",
+      "targetTableId": "1",
+      "sourceFieldId": "7",
+      "targetFieldId": "4",
+      "sourceCardinality": "one",
+      "targetCardinality": "many",
+      "createdAt": 1731871015632,
+      "diagramId": "5jm1ypbwuuxa"
+    },
+    {
+      "id": "51",
+      "name": "movies_id_fk",
+      "sourceTableId": "6",
+      "targetTableId": "29",
+      "sourceFieldId": "7",
+      "targetFieldId": "32",
+      "sourceCardinality": "one",
+      "targetCardinality": "one",
+      "createdAt": 1731871280736,
+      "diagramId": "5jm1ypbwuuxa"
+    },
+    {
+      "id": "52",
+      "name": "movies_id_fk",
+      "sourceTableId": "6",
+      "targetTableId": "24",
+      "sourceFieldId": "7",
+      "targetFieldId": "27",
+      "sourceCardinality": "one",
+      "targetCardinality": "many",
+      "createdAt": 1731871194231,
+      "diagramId": "5jm1ypbwuuxa"
+    },
+    {
+      "id": "53",
+      "name": "movies_id_fk",
+      "sourceTableId": "6",
+      "targetTableId": "24",
+      "sourceFieldId": "7",
+      "targetFieldId": "26",
+      "sourceCardinality": "one",
+      "targetCardinality": "many",
+      "createdAt": 1731871141208,
+      "diagramId": "5jm1ypbwuuxa"
+    },
+    {
+      "id": "54",
+      "name": "users_id_fk",
+      "sourceTableId": "37",
+      "targetTableId": "1",
+      "sourceFieldId": "38",
+      "targetFieldId": "3",
+      "sourceCardinality": "one",
+      "targetCardinality": "many",
+      "createdAt": 1731871000512,
+      "diagramId": "5jm1ypbwuuxa"
+    },
+    {
+      "id": "55",
+      "name": "users_id_fk",
+      "sourceTableId": "37",
+      "targetTableId": "29",
+      "sourceFieldId": "38",
+      "targetFieldId": "31",
+      "sourceCardinality": "one",
+      "targetCardinality": "many",
+      "createdAt": 1731871247063,
+      "diagramId": "5jm1ypbwuuxa"
+    },
+    {
+      "id": "56",
+      "name": "users_id_fk",
+      "sourceTableId": "37",
+      "targetTableId": "44",
+      "sourceFieldId": "38",
+      "targetFieldId": "46",
+      "sourceCardinality": "one",
+      "targetCardinality": "many",
+      "createdAt": 1731871100192,
+      "diagramId": "5jm1ypbwuuxa"
+    }
+  ],
+  "dependencies": []
+}

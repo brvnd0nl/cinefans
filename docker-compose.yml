@@ -3,7 +3,7 @@ services:
     build:
       context: ./frontend
     ports:
-      - "5173:5173"
+      - "8080:80"
     depends_on:
       - backend
 
@@ -14,15 +14,28 @@ services:
       - "5000:5000"
     environment:
       - FLASK_ENV=development
-      - DATABASE_URL=postgresql://user:password@database:5432/moviesdb
+      - DATABASE_URL=postgresql://cinefans:cinefans2024@database/cinefans-db
     depends_on:
       - database
 
   database:
-    image: postgres:13
+    image: postgres:17
     environment:
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: password
-      POSTGRES_DB: moviesdb
+      POSTGRES_USER: cinefans
+      POSTGRES_PASSWORD: cinefans2024
+      POSTGRES_DB: cinefans-db
     ports:
       - "5432:5432"
+    volumes:
+      - ./database/:/docker-entrypoint-initdb.d/
+      - postgres_data:/var/lib/postgresql/data
+    command: >
+      bash -c "
+        docker-entrypoint.sh postgres &
+        sleep 10
+        PGPASSWORD=cinefans2024 pg_restore -U cinefans -d cinefans-db /docker-entrypoint-initdb.d/cinefans-db-script.backup -v -c
+        wait
+      "
+
+volumes:
+  postgres_data:

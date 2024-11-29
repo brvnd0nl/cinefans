@@ -1,0 +1,99 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+.env
+.venv
+env/
+venv/
+ENV/
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Node/React
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+build/
+dist/
+coverage/
+.next/
+out/
+.DS_Store
+.env.local
+.env.development
+.env.production
+
+# Docker
+.docker/
+docker-compose.override.yml
+docker-compose.override.yaml
+
+# IDEs y editores
+.idea/
+.vscode/
+*.swp
+*.swo
+*.swn
+*.bak
+*.sublime-workspace
+*.sublime-project
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+*.log
+logs/
+*.pid
+*.seed
+*.pid.lock
+
+# Archivos de ambiente y secretos
+.env*
+*.pem
+*.key
+secrets/
+
+# Archivos de dependencias
+package-lock.json
+yarn.lock
+poetry.lock
+
+# Archivos de caché
+.cache/
+.parcel-cache/
+
+# Archivos de base de datos
+*.sqlite
+*.db
+*.sql
+
+# Archivos de respaldo
+*.bak
+*.backup
+*~ 
