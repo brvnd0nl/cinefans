@@ -1,0 +1,166 @@
+/* Contenedor principal */
+.login-container_lg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #0c0c1c;
+    margin: 0;
+    margin-top: -100px;
+}
+
+/* Formulario de login */
+.login-form {
+    background-color: #1c1c2c;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /*text-align: center;*/
+    max-width: 400px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Título del formulario */
+.login-h2 {
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 20px;
+    text-align: left; /* Alinea el título a la izquierda */
+    width: 100%; /* Asegura que ocupe el mismo ancho que los campos de entrada */
+}
+
+
+
+/* Etiquetas */
+label {
+    font-size: 1rem;
+    color: #fff;
+    margin-bottom: 5px;
+    display: block;
+    text-align: left; /* Alinea los labels a la izquierda */
+}
+
+/* Campos de entrada */
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+}
+
+input:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.password-wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%; /* Asegura que ocupe el mismo ancho que los otros campos */
+    position: relative; /* Permite posicionar el ícono dentro del contenedor */
+}
+
+/* Campo de entrada en el password-wrapper */
+.password-wrapper input {
+    width: 100%; /* Asegura que el input ocupe todo el espacio disponible */
+    padding-right: 40px; /* Espacio para el ícono del ojo */
+}
+
+.toggle-password {
+    position: absolute; /* Posiciona el ícono dentro del input */
+    right: -20px; /* Ajusta la posición del ícono a la derecha */
+    top: 70%; /* Centra el ícono verticalmente dentro del input */
+    transform: translateY(-50%); /* Ajusta para centrar completamente */
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #007bff;
+}
+
+.toggle-password:hover {
+    color: #0056b3; /* Color al pasar el mouse */
+}
+
+/* Estilo para los íconos de Font Awesome */
+.toggle-password i {
+    pointer-events: none; /* Evita que el ícono reciba clics */
+}
+
+
+.input-grouplg input {
+    width: 100%; /* Asegura que ambos inputs tengan el mismo tamaño */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+}
+
+/* Grupos de entrada */
+.input-grouplg {
+    position: relative; /* Para que el ícono se alinee con el input */
+}
+
+/* Estilo de los botones */
+.button-containers {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+.btn-submit_s{
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-bottom: 10px; /* Separación entre los botones */
+  margin-top: 70px; 
+}
+
+.btn-register_s {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-bottom: 30px;
+    margin-top: 120px; /* Separación entre los botones */
+  }
+
+.btn-submit_s {
+    background-color: #007bff;
+    color: white;
+}
+  
+.btn-submit_s:hover {
+    background-color: #0056b3;
+}
+  
+.btn-register_s {
+    background-color: #3c3c44;
+    color: white;
+}
+  
+.btn-register_s:hover {
+    background-color: #218838;
+}
+  
+  /* Estilo para el enlace de registro */
+.register-link {
+    display: flex;
+    align-items: center;
+}
+  
+.register-link span {
+    color: #fff;
+    margin-right: 5px;
+}
