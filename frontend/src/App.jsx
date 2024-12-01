@@ -8,7 +8,7 @@ import SliderAccion from './SliderAccion';
 import SliderAventura from './SliderAventura';
 import SliderComedia from './SliderComedia';
 import Footer from './Footer';
-import Login from './login';
+import Login from './Login';
 import Registro from './Registro';
 import IndexMovie from './IndexMovie';
 
