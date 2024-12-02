@@ -54,7 +54,7 @@
     color: white;
     border: none;
     font-size: 1.5rem;
-    padding: 10px;
+    padding: 3 13px;
     cursor: pointer;
     border-radius: 50%;
     transition: background-color 0.3s ease;
@@ -74,3 +74,4 @@
       gap: 5px;
     }
   }
+
