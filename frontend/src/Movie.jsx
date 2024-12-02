@@ -1,8 +1,10 @@
 import './Movie.css';
 import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 
-function Movie({ movieId }) {
+function Movie() {
     const [movie, setMovie] = useState(null);
+    const { movieId } = useParams();
 
   useEffect(() => {
     const fetchMovie = async () => {
@@ -20,33 +22,16 @@ function Movie({ movieId }) {
 
   return (
     <div className="movie-details">
-      <header className="movie-header">
-        <img src="" alt="" />
-        <h2>{movie.title}</h2>
-      </header>
-
-      <section className="movie-info">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum dolores atque possimus expedita obcaecati officiis mollitia error ex earum sequi harum fugit necessitatibus, consequatur perspiciatis quasi eligendi asperiores consequuntur distinctio.</p>
-        <div className="details">
-          <p><strong>Director:</strong> Pepe</p>
-          <p><strong>Elenco:</strong> Juan, Jaime</p>
-          <p><strong>Género:</strong> Terror</p>
-          <p><strong>Duración:</strong> 120 min</p>
-        </div>
-      </section>
-
-      <section className="trailer">
-        <h2>Tráiler</h2>
-      </section>
-
-      <section className="reviews">
-        <h2>Reseñas</h2>
-      </section>
-
-      <section className="similar-movies">
-        <h2>Películas Similares</h2>
-        {/* Aquí puedes renderizar las películas similares */}
-      </section>
+            {movie && (
+                <>
+                  <h2>{movie.title}</h2>
+                  <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
+                  <p>Fecha de estreno: {movie.release_date}</p>
+                  <p>Resumen: {movie.overview}</p>
+                  <p>Género: {movie.genres.map((genre) => genre.name).join(', ')}</p>
+                  <p>Duración: {movie.runtime} minutos</p>
+                </>
+              )}
     </div>
   );
 }
