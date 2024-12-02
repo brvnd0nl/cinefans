@@ -16,7 +16,6 @@ const Navbar = () => {
       <div className={`nav_items ${isOpen && "open"}`}>
         {/* Cambiamos la etiqueta a Link para la navegación */}
         <Link to="/index-movie"> INICIO </Link>
-        <Link to="/movie"> PELICULA  </Link>
         <Link to={`/movie-list`}> PELICULAS </Link>
         <div className="nav_search">
           <input type="text" placeholder="Buscar..." className="search_input" />

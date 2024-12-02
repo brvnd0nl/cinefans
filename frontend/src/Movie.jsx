@@ -24,12 +24,22 @@ function Movie() {
     <div className="movie-details">
             {movie && (
                 <>
-                  <h2>{movie.title}</h2>
-                  <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
-                  <p>Fecha de estreno: {movie.release_date}</p>
-                  <p>Resumen: {movie.overview}</p>
-                  <p>Género: {movie.genres.map((genre) => genre.name).join(', ')}</p>
-                  <p>Duración: {movie.runtime} minutos</p>
+                <section className="movie-banner" style={{
+              backgroundImage: `url(https://image.tmdb.org/t/p/w1280${movie.backdrop_path})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center'
+            }}>
+                  <div className='movie-information'>
+                    <h2>{movie.title}</h2>
+                    <p>Fecha de estreno: <span>{movie.release_date}</span></p>
+                    <p>Género: <span>{movie.genres.map((genre) => genre.name).join(', ')}</span></p>
+                    <p>Duración: <span>{movie.runtime} minutos</span></p>
+                    <p>{movie.overview}</p>
+                  </div>
+                </section>
+                <section className='movie-cast'>
+
+                </section>
                 </>
               )}
     </div>
