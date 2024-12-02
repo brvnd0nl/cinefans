@@ -8,13 +8,16 @@ const Navbar = () => {
 
   return (
     <div className="navbar">
-      <div className="nav_logo">
-        <img src={logo} alt="CINEFAN Logo" className="logo_image" />
-      </div>
+      <Link to="/"> 
+        <div className="nav_logo">
+          <img src={logo} alt="CINEFAN Logo" className="logo_image" />
+        </div>
+      </Link>
       <div className={`nav_items ${isOpen && "open"}`}>
         {/* Cambiamos la etiqueta a Link para la navegación */}
         <Link to="/index-movie"> INICIO </Link>
         <Link to="/movie"> PELICULA  </Link>
+        <Link to="/movie-list"> PELICULAS </Link>
         <div className="nav_search">
           <input type="text" placeholder="Buscar..." className="search_input" />
         </div>

@@ -12,6 +12,7 @@ import Login from './Login';
 import Registro from './Registro';
 import IndexMovie from './IndexMovie';
 import Movie from './Movie';
+import MovieList from './MovieList';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -33,6 +34,7 @@ function App() {
           <Route path="/registro" element={<Registro />} /> {/* Ruta para la página Login */}
           <Route path="/index-movie" element={<IndexMovie />} />
           <Route path="/movie" element={<Movie />} />
+          <Route path="/movie-list" element={<MovieList />} />
         </Routes>
         <Footer />
       </div>
