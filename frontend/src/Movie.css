@@ -1,0 +1,29 @@
+.movie-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #222;
+    color: #fff;
+  }
+  
+  .movie-header {
+    text-align: center;
+  }
+  
+  .movie-info {
+    padding: 20px;
+  }
+  
+  .trailer {
+    margin-top: 20px;
+  }
+  
+  .reviews {
+    margin-top: 20px;
+  }
+  
+  .review {
+    border: 1px solid #333;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
