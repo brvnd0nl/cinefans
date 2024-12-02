@@ -1,12 +1,28 @@
-import React from 'react';
 import './Movie.css';
+import React, { useState, useEffect } from 'react';
 
-function Movie() {
+function Movie({ movieId }) {
+    const [movie, setMovie] = useState(null);
+
+  useEffect(() => {
+    const fetchMovie = async () => {
+      try {
+        const response = await fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=9d89ed2d9eb9413c95cb080dc62d860d&language=es-ES`); 1    
+        const data = await response.json();
+        setMovie(data);
+      } catch (error) {
+        console.error('Error al obtener la película:', error);
+      }
+    };
+
+    fetchMovie();
+  }, [movieId]);
+
   return (
     <div className="movie-details">
       <header className="movie-header">
         <img src="" alt="" />
-        <h1>Pelicula 1</h1>
+        <h2>{movie.title}</h2>
       </header>
 
       <section className="movie-info">

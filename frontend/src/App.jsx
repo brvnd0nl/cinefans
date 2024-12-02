@@ -33,7 +33,7 @@ function App() {
           <Route path="/login" element={<Login />} /> {/* Ruta para la página Login */}
           <Route path="/registro" element={<Registro />} /> {/* Ruta para la página Login */}
           <Route path="/index-movie" element={<IndexMovie />} />
-          <Route path="/movie" element={<Movie />} />
+          <Route path="/movie:id" element={<Movie />} />
           <Route path="/movie-list" element={<MovieList />} />
         </Routes>
         <Footer />
