@@ -185,3 +185,19 @@ def get_movie_details(movie_id):
     except requests.RequestException as e:
         current_app.logger.error(f"Error fetching movie details: {str(e)}")
         return {"error": f"Error al obtener detalles de la película: {str(e)}"}, 500
+
+def get_movie_reviews(movie_id):
+    """Obtiene las reseñas de una película desde TMDB"""
+    url = f"{BASE_URL}/movie/{movie_id}/reviews"
+    params = {
+        "api_key": TMDB_API_KEY,
+        "language": LANGUAGE
+    }
+    
+    try:
+        response = requests.get(url, params=params)
+        response.raise_for_status()
+        return response.json()
+    except requests.RequestException as e:
+        current_app.logger.error(f"Error fetching TMDB reviews: {str(e)}")
+        return {"results": []}

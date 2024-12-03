@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { config } from "../utils/config";
 import "../styles/SliderComedia.css";
 
@@ -21,7 +22,10 @@ const SliderComedia = () => {
         const imageUrls = data.results
           .slice(0, 20) // Obtén las primeras 20 películas
           .map(
-            (movie) => `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+            (movie) => ({
+              image : `https://image.tmdb.org/t/p/w500${movie.poster_path}`,
+              id : movie.id
+            })
           );
         setImages(imageUrls);
       } catch (error) {
@@ -52,12 +56,13 @@ const SliderComedia = () => {
         </button>
         <div className="small-images-wrapper">
           {images.slice(currentIndex, currentIndex + 8).map((image, index) => (
+            <Link key={index} to={`/movie-info/${image.id}`} className="small-image">
             <img
               key={index}
-              src={image}
+              src={image.image}
               alt={`Película ${index + 1}`}
-              className="small-image"
-            />
+              />
+            </Link>
           ))}
         </div>
         <button className="next" onClick={nextSlide}>

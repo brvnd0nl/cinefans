@@ -99,7 +99,7 @@ const SearchBar = () => {
 
   const handleSuggestionClick = (movieId) => {
     if (movieId) {
-      navigate(`/movie/${movieId}`);
+      navigate(`/movie-info/${movieId}`);
       setShowSuggestions(false);
       setSearchTerm('');
       setError(null);

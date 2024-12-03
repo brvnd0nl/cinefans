@@ -6,7 +6,7 @@ const MovieCard = ({ movie }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate(`/movie/${movie.id}`);
+    navigate(`/movie-info/${movie.id}`);
   };
 
   return (
