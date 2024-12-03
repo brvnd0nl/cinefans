@@ -27,3 +27,29 @@ class Favorite(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"), nullable=False)
     movie_id = db.Column(db.Integer, db.ForeignKey("movies.id"), nullable=False)
+
+class Review(db.Model):
+    __tablename__ = 'reviews'
+
+    id = db.Column(db.Integer, primary_key=True)
+    content = db.Column(db.Text, nullable=False)
+    rating = db.Column(db.Integer, nullable=False)
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+    movie_id = db.Column(db.Integer, nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+
+    # Relación con el usuario
+    user = db.relationship('User', backref=db.backref('reviews', lazy=True))
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'content': self.content,
+            'rating': self.rating,
+            'created_at': self.created_at.isoformat(),
+            'movie_id': self.movie_id,
+            'user': {
+                'id': self.user.id,
+                'username': self.user.username
+            }
+        }

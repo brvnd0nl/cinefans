@@ -1,6 +1,7 @@
 from flask import Blueprint, request, jsonify
 from flask_jwt_extended import jwt_required
 from app.services.tmdb_service import search_movies, get_top_rated_movies, get_popular_movies, get_movie_details
+from app.controllers.review_controller import get_movie_reviews, create_review, delete_review
 
 bp = Blueprint("movies", __name__, url_prefix="/movies")
 
@@ -35,3 +36,17 @@ def get_movie(movie_id):
 @jwt_required()
 def protected():
     return {"message": "You have access"}, 200
+
+@bp.route('/<int:movie_id>/reviews', methods=['GET'])
+def movie_reviews(movie_id):
+    return get_movie_reviews(movie_id)
+
+@bp.route('/<int:movie_id>/reviews', methods=['POST'])
+@jwt_required()
+def add_review(movie_id):
+    return create_review(movie_id)
+
+@bp.route('/<int:movie_id>/reviews/<int:review_id>', methods=['DELETE'])
+@jwt_required()
+def remove_review(movie_id, review_id):
+    return delete_review(movie_id, review_id)
