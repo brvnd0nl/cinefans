@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, Fragment } from "react";
+import { Link } from "react-router-dom";
 import { config } from "../utils/config";
 import "../styles/SliderAccion.css";
 
@@ -20,7 +21,10 @@ const SliderAccion = () => {
         const data = await response.json();
         // Mapea la URL de las imágenes (asegurándote de usar el tamaño adecuado)
         const imageUrls = data.results.map(
-          (movie) => `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+          (movie) => ({
+            image : `https://image.tmdb.org/t/p/w500${movie.poster_path}`,
+            id : movie.id
+          })
         );
         setImages(imageUrls);
       } catch (error) {
@@ -51,12 +55,13 @@ const SliderAccion = () => {
         </button>
         <div className="small-images-wrapper">
           {images.slice(currentIndex, currentIndex + 8).map((image, index) => (
-            <img
-              key={index}
-              src={image}
-              alt={`Película ${index + 1}`}
-              className="small-image"
-            />
+            <Link key={index} to={`/movie-info/${image.id}`} className="small-image">
+              <img
+                src={image.image}
+                loading="lazy"
+                alt={`Película ${index + 1}`}
+              />
+            </Link>
           ))}
         </div>
         <button className="next" onClick={nextSlide}>
