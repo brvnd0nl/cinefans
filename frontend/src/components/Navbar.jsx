@@ -9,18 +9,25 @@ const Navbar = () => {
 
   return (
     <div className="navbar">
-      <div className="nav_logo">
-        <img src={logo} alt="CINEFAN Logo" className="logo_image" />
-      </div>
+      <Link to="/"> 
+        <div className="nav_logo">
+          <img src={logo} alt="CINEFAN Logo" className="logo_image" />
+        </div>
+      </Link>
       <div className={`nav_items ${isOpen && "open"}`}>
         {/* Cambiamos la etiqueta a Link para la navegación */}
         <Link to="/index-movie"> INICIO </Link>
+        <Link to={`/movie-list`}> PELICULAS </Link>
         <SearchBar />
         <div className="nav_user">
           {/* Usamos Link para redirigir a la página de login */}
           <Link to="/login">
             <i className="fas fa-user"></i> {/* Ícono de Font Awesome */}
           </Link>
+        </div>
+        <div className="nav_movie">
+          {/* Usamos Link para redirigir a la página de login */}
+
         </div>
       </div>
 
