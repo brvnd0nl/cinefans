@@ -19,14 +19,14 @@ function App() {
 
   return (
     <Router> {/* Envolver todo en un Router */}
-      <div className="App">
+      <div className="App"> 
         <Navbar />
         <Routes>
           {/* Definir la ruta de la página principal */}
           <Route path="/" element={
             <>
               <IndexMovie />
-              
+
             </>
           } />
           {/* Definir la ruta de la página de Login */}
