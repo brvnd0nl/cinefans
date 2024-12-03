@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Importar react-router-dom
-import './IndexMovie.css';
-import Slider from './Slider';
-import SliderPopulares from './SliderPopulares';
-import SliderAccion from './SliderAccion';
-import SliderAventura from './SliderAventura';
-import SliderComedia from './SliderComedia';
-import SliderComedias from './SliderComedias';
-import SliderCrimen from './SliderCrimen';
+import './styles/IndexMovie.css';
+import Slider from './components/Slider';
+import SliderPopulares from './components/SliderPopulares';
+import SliderAccion from './components/SliderAccion';
+import SliderAventura from './components/SliderAventura';
+import SliderComedia from './components/SliderComedia';
+import SliderComedias from './components/SliderComedias';
+import SliderCrimen from './components/SliderCrimen';
 function IndexMovie() {
     const [count, setCount] = useState(0);
     return (

@@ -1,0 +1,80 @@
+/* Contenedor principal */
+.slider-populares {
+    text-align: left; /* Asegura que el texto quede alineado a la izquierda */
+    width: 95%; /* Ajusta el ancho al 95% del contenedor */
+    margin: 0 auto; /* Centra el carrusel en la pantalla */
+    padding-left: 20px; /* Añade un poco de espacio desde el borde izquierdo */
+  }
+  
+  /* Estilo del título */
+  h2 {
+    font-size: 1.5rem; /* Reduce el tamaño del texto */
+    margin-bottom: 10px; /* Espacio debajo del título */
+    margin-top: 0;
+    color: white !important;
+    font-weight: f;
+    text-align: left; /* Alinea el título a la izquierda */
+    padding-left: 20px; /* Alinea el título con la imagen */
+  }
+  
+  /* Estilos del carrusel pequeño */
+  .small-slider-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+    overflow: hidden;
+    margin-top: 10px;
+    width: 100%; /* Asegura que el contenedor se ajuste al ancho del componente */
+  }
+  
+  .small-images-wrapper {
+    display: flex;
+    gap: 10px;
+    overflow: hidden;
+    width: calc(100% - 40px); /* Ajusta el ancho interno, respetando los botones */
+  }
+  
+  .small-image {
+    flex: 1 0 calc(12.5% - 10px); /* 12.5% asegura 8 imágenes por fila */
+    max-width: 12.5%; /* Ajusta las imágenes al ancho proporcional */
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  
+  .small-image:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+  
+  /* Botones de navegación */
+  button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  
+  /* Responsive para pantallas pequeñas */
+  @media (max-width: 768px) {
+    .small-image {
+      flex: 1 0 calc(25% - 10px); /* Muestra 4 imágenes por fila en pantallas pequeñas */
+    }
+  
+    .small-slider-container {
+      gap: 5px;
+    }
+  }
+  
