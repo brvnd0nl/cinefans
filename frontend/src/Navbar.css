@@ -1,7 +1,7 @@
 /* src/Menu.css */
 .navbar {
     background: #0c0c1c;
-    height: 60px;
+    height: 10vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -125,4 +125,3 @@ body {
     .logo_image {
         height: 40px; /* Reducir el tamaño en pantallas pequeñas */
     }
-}
