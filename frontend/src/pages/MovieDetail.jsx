@@ -25,7 +25,6 @@ const MovieDetail = () => {
           throw new Error('Película no encontrada');
         }
         const data = await response.json();
-        console.log(data);
         setMovie(data);
       } catch (err) {
         setError(err.message);

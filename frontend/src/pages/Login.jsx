@@ -34,7 +34,7 @@ const Login = () => {
       }
 
       // Login exitoso
-      login(data.access_token, data.user);
+      login(data.access_token, email);
       navigate('/index-movie'); // Redirige a pagina de inicio
     } catch (error) {
       Swal.fire({
