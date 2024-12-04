@@ -12,12 +12,14 @@ export const AuthProvider = ({ children }) => {
     setToken(newToken);
     setUser(userData);
     localStorage.setItem('cf-token', newToken);
+    setIsAuthenticated(true);
   };
 
   const logout = () => {
     setToken(null);
     setUser(null);
     localStorage.removeItem('cf-token');
+    setIsAuthenticated(false);
   };
 
   useEffect(() => {

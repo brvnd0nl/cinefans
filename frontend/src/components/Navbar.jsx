@@ -1,11 +1,19 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom"; // Importar Link para la navegación
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 import "../styles/Navbar.css";
-import logo from "../assets/logo.png"; // Importa la imagen desde src
+import logo from "../assets/logo.png";
 import SearchBar from './SearchBar';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { isAuthenticated, user, logout } = useAuth();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate('/');
+  };
 
   return (
     <div className="navbar">
@@ -21,9 +29,15 @@ const Navbar = () => {
         <SearchBar />
         <div className="nav_user">
           {/* Usamos Link para redirigir a la página de login */}
-          <Link to="/login">
-            <i className="fas fa-user"></i> {/* Ícono de Font Awesome */}
-          </Link>
+          {isAuthenticated ? (
+            <button onClick={handleLogout} className="logout-btn">
+              <i className="fas fa-sign-out-alt"></i>
+            </button>
+          ) : (
+            <Link to="/login">
+              <i className="fas fa-user"></i> {/* Ícono de Font Awesome */}
+            </Link>
+          )}
         </div>
         <div className="nav_movie">
           {/* Usamos Link para redirigir a la página de login */}

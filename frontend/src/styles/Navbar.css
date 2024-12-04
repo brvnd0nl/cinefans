@@ -25,7 +25,7 @@ body {
 .nav_items {
     display: flex; /* Asegura que los elementos se coloquen en una fila */
     align-items: center; /* Alinea verticalmente los elementos */
-    transform: translateX(-20px); 
+    transform: translateX(-80px); 
 }
 .nav_items a {
     margin: 0 15px; /* Ajusta los márgenes para evitar que los elementos se superpongan */
@@ -125,4 +125,48 @@ body {
     .logo_image {
         height: 40px; /* Reducir el tamaño en pantallas pequeñas */
     }
+}
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.username {
+  color: #fff;
+  font-weight: 500;
+}
+
+.logout-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.login-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.login-btn:hover {
+  color: #3498db;
+}
+
+.nav_user i {
+  margin-right: 0.5rem;
 }
